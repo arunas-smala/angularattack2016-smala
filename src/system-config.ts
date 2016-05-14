@@ -34,6 +34,7 @@ const barrels: string[] = [
   'app/+home',
   'app/+drag-n-drop/template',
   'app/+drag-n-drop/sidebar',
+  'app/+template-editor/shared/codemirror',
   /** @cli-barrel */
 ];
 
@@ -44,6 +45,9 @@ barrels.forEach((barrelName: string) => {
 
 /** Type declaration for ambient System. */
 declare var System: any;
+
+/** Type declaration for ambient System. */
+declare var CodeMirror: any;
 
 // Apply the CLI SystemJS configuration.
 System.config({
