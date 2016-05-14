@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../shared/data.service';
 
 @Component({
     moduleId: module.id,
@@ -8,10 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
     public showDebug: boolean = false;
+    public data: any;
 
-    constructor() {}
+    constructor(private service: DataService) {}
 
     ngOnInit() {
+        this.data = this.service.getData();
     }
 
 }

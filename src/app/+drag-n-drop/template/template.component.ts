@@ -17,15 +17,15 @@ import { DataService } from '../shared/data.service';
 })
 export class TemplateComponent implements OnInit, AfterViewInit {
 
-  constructor(private _service: DataService) {}
+  constructor(private service: DataService) {}
 
   ngOnInit() {
-      this._service.startTraverse();
+      this.service.startTraverse();
       console.log('template start');
   }
 
   ngAfterViewInit() {
-      this._service.endTraverse();
+      this.service.endTraverse();
       console.log('template finish2');
   }
 

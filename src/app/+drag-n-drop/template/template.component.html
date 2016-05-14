@@ -1,9 +1,23 @@
-<block name="first-block" title="First block" #firstBlock="block">
+<block name="first-block" title="First block">
   <div>Some text goes here</div>
-  <pre>
-    {{firstBlock.variables|json}}
-  </pre>
+
+  <div>
+    <div>
+      <block name="inner-block" title="Inner block">
+        <div>Inner block</div>
+      </block>
+    </div>
+  </div>
+
+  <block name="inner-block-2" title="Inner block 2">
+    <div>Inner block 2</div>
+  </block>
+
   <div>
     <var name="first-variable" title="First variable" value="first value"></var>
   </div>
+</block>
+
+<block name="second-block" title="Second Block">
+  <div>Second block</div>
 </block>
