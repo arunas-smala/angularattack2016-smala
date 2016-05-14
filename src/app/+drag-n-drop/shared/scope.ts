@@ -1,5 +1,5 @@
-// It's not injectable. We will create new instances as needed
-// @Injectable()
+import { ElementRef } from '@angular/core';
+
 export function Scope() {
     this.variables = {};
     this.blocks = {};
