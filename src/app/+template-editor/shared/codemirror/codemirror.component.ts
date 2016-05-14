@@ -100,13 +100,16 @@ export class CodemirrorComponent {
     }
 
     // CodeMirror change event
+    var changeTimeout;
     this.instance.on('change', () => {
-      console.log('changed!');
+      if (changeTimeout) {
+        clearTimeout(changeTimeout);
+      }
 
       this.renderer.setElementProperty(this.host.nativeElement, 'value', this.instance.getValue());
-      setTimeout(() => {
+      changeTimeout = setTimeout(() => {
         this.renderer.invokeElementMethod(this.host.nativeElement, 'dispatchEvent', [new Event('change')])
-      });
+      }, 100);
     });
   }
 
