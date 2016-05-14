@@ -104,7 +104,9 @@ export class CodemirrorComponent {
       console.log('changed!');
 
       this.renderer.setElementProperty(this.host.nativeElement, 'value', this.instance.getValue());
-      this.renderer.invokeElementMethod(this.host.nativeElement, 'dispatchEvent', [new Event('change')]);
+      setTimeout(() => {
+        this.renderer.invokeElementMethod(this.host.nativeElement, 'dispatchEvent', [new Event('change')])
+      });
     });
   }
 
