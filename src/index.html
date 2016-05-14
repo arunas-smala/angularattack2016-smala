@@ -5,6 +5,7 @@
   <title>TemplateBuilder</title>
   <base href="/">
 
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
   {{#unless environment.production}}
   <script src="http://localhost:49152/livereload.js" type="text/javascript"></script>
   {{/unless}}
@@ -17,6 +18,8 @@
   
 
     {{#each scripts.polyfills}}<script src="{{.}}"></script>{{/each}}
+    <script src="vendor/ng2-bootstrap/bundles/ng2-bootstrap.min.js"></script>
+
     <script>
       System.import('system-config.js').then(function () {
         System.import('main');
