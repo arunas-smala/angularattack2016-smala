@@ -1,13 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {Http, HTTP_PROVIDERS} from '@angular/http';
-
+import { CodemirrorComponent } from './shared/index'
 
 @Component({
     moduleId: module.id,
     selector: 'app-template-editor',
     templateUrl: 'template-editor.component.html',
     providers: [HTTP_PROVIDERS],
-    styleUrls: ['template-editor.component.css']
+    styleUrls: ['template-editor.component.css'],
+    directives: [CodemirrorComponent]
 })
 export class TemplateEditorComponent implements OnInit {
 
@@ -22,7 +23,7 @@ export class TemplateEditorComponent implements OnInit {
 
     onSubmit() {
         if (!this.template) {
-            alert('Empty!'); // TODO change to normal alert
+            console.log('Empty!'); // TODO change to normal alert
 
             // let's load not empty template
             this._loadTemplate();
@@ -32,7 +33,7 @@ export class TemplateEditorComponent implements OnInit {
 
         localStorage.setItem('template', this.template);
 
-        alert('Saved!'); // TODO change to normal alert
+        console.log('Saved!'); // TODO change to normal alert
     }
 
     private _loadTemplate() {

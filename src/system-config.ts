@@ -46,6 +46,9 @@ barrels.forEach((barrelName: string) => {
 /** Type declaration for ambient System. */
 declare var System: any;
 
+/** Type declaration for ambient System. */
+declare var CodeMirror: any;
+
 // Apply the CLI SystemJS configuration.
 System.config({
   map: {

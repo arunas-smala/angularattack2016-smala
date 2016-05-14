@@ -15,7 +15,7 @@ module.exports = function(defaults) {
       'moment/moment.js',
       'ng2-bootstrap/**/*.js',
       'codemirror/lib/codemirror.js',
-      'codemirror/lib/codemirror.css'
+      'codemirror/lib/codemirror.css',
       'codemirror/theme/solarized.css'
     ]
   });
