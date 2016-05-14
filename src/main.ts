@@ -3,7 +3,7 @@ import { enableProdMode } from '@angular/core';
 import { TemplateBuilderAppComponent, environment } from './app/';
 
 if (environment.production) {
-  enableProdMode();
+    enableProdMode();
 }
 
 bootstrap(TemplateBuilderAppComponent);
