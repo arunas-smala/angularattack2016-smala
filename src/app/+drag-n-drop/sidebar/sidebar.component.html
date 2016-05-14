@@ -1,3 +1,9 @@
-<p>
-  sidebar works!
-</p>
+<div class="debug-window" *ngIf="showDebug">
+  <pre>
+{
+  foo: bar,
+  variables: 'aaa'
+}
+  </pre>
+</div>
+<button class="btn btn-default debug" (click)="showDebug = !showDebug">Debug</button>
