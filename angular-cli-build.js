@@ -12,7 +12,8 @@ module.exports = function(defaults) {
       'reflect-metadata/*.js',
       'rxjs/**/*.js',
       '@angular/**/*.js',
-      'moment/moment.js'
+      'moment/moment.js',
+      'ng2-bootstrap/**/*.js'
     ]
   });
 };
