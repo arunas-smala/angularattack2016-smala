@@ -11,7 +11,6 @@ export class TemplateEditorComponent implements OnInit {
     constructor() {}
 
     ngOnInit() {
-        console.log('init');
     }
 
 }
