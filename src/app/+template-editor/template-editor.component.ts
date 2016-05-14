@@ -13,7 +13,7 @@ export class TemplateEditorComponent implements OnInit {
     constructor() {}
 
     ngOnInit() {
-        var template = localStorage.getItem('template');
+        let template = localStorage.getItem('template');
 
         if (template) {
             this.template = template;
