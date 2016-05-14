@@ -21,12 +21,10 @@ export class TemplateComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
       this.service.startTraverse();
-      console.log('template start');
   }
 
   ngAfterViewInit() {
       this.service.endTraverse();
-      console.log('template finish2');
   }
 
 }

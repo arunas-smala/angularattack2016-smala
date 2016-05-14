@@ -1,6 +1,5 @@
 import { 
     ElementRef,
-    Component, 
     Directive, 
     OnInit, 
     Input,
@@ -31,8 +30,6 @@ export class BlockDirective implements OnInit {
     ) {}
 
     ngOnInit() {
-        console.log('block start', this.name);
-
         var currentScope = (() => {
             do {
                 // Let's get current scope cursor
@@ -91,12 +88,4 @@ export class BlockDirective implements OnInit {
         // belong to this block
         this.service.setTraverseCursor(newScope);
     }
-
-    ngAfterViewInit() {
-        console.log('block end', this.name);
-        // Restore old scope
-        this.service.setTraverseCursorBack();
-    }
-
-
 }
