@@ -1,7 +1,9 @@
-<block name="first-block" title="First block">
+<block name="first-block" title="First block" #firstBlock="block">
   <div>Some text goes here</div>
+  <pre>
+    {{firstBlock.variables|json}}
+  </pre>
   <div>
     <var name="first-variable" title="First variable" value="first value"></var>
   </div>
-  <div>Some text goes here too</div>
 </block>
