@@ -8,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplateEditorComponent implements OnInit {
 
+    public template: string;
+
     constructor() {}
 
     ngOnInit() {
+        var template = localStorage.getItem('template');
+
+        if (template) {
+            this.template = template;
+        }
+    }
+
+    onSubmit() {
+        localStorage.setItem('template', this.template);
     }
 
 }
