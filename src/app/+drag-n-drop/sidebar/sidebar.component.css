@@ -1,0 +1,21 @@
+.debug {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 3;
+}
+
+.debug-window {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+}
+
+.debug-window  pre{
+    margin: 0;
+    background: transparent;
+    border: none;
+}

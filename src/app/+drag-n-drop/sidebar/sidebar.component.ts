@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
-  selector: 'tb-sidebar',
-  templateUrl: 'sidebar.component.html',
-  styleUrls: ['sidebar.component.css']
+    moduleId: module.id,
+    selector: 'tb-sidebar',
+    templateUrl: 'sidebar.component.html',
+    styleUrls: ['sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
+    public showDebug: boolean = false;
 
-  constructor() {}
+    constructor() {}
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
 }
