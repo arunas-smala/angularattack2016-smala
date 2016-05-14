@@ -16,6 +16,7 @@ module.exports = function(defaults) {
       'ng2-bootstrap/**/*.js',
       'codemirror/lib/codemirror.js',
       'codemirror/lib/codemirror.css'
+      'codemirror/theme/solarized.css'
     ]
   });
 };
