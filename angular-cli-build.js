@@ -13,7 +13,10 @@ module.exports = function(defaults) {
       'rxjs/**/*.js',
       '@angular/**/*.js',
       'moment/moment.js',
-      'ng2-bootstrap/**/*.js'
+      'ng2-bootstrap/**/*.js',
+      'alertify/lib/alertify.min.js',
+      'alertify/themes/alertify.core.css',
+      'alertify/themes/alertify.bootstrap.css'
     ]
   });
 };
