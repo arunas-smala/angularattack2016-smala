@@ -13,7 +13,9 @@ module.exports = function(defaults) {
       'rxjs/**/*.js',
       '@angular/**/*.js',
       'moment/moment.js',
-      'ng2-bootstrap/**/*.js'
+      'ng2-bootstrap/**/*.js',
+      'codemirror/lib/codemirror.js',
+      'codemirror/lib/codemirror.css'
     ]
   });
 };

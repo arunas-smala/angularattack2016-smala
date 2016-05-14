@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {Http, HTTP_PROVIDERS} from '@angular/http';
+import { Component, OnInit} from '@angular/core';
+import { Http, HTTP_PROVIDERS} from '@angular/http';
+import { CodemirrorDirective } from './shared/codemirror.directive';
 
 
 @Component({
@@ -7,7 +8,8 @@ import {Http, HTTP_PROVIDERS} from '@angular/http';
     selector: 'app-template-editor',
     templateUrl: 'template-editor.component.html',
     providers: [HTTP_PROVIDERS],
-    styleUrls: ['template-editor.component.css']
+    styleUrls: ['template-editor.component.css'],
+    directives: [CodemirrorDirective]
 })
 export class TemplateEditorComponent implements OnInit {
 
