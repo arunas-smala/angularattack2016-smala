@@ -9,7 +9,7 @@
       </button>
       <a class="navbar-brand" [routerLink]="['/']">Template Builder</a>
     </div>
-    <div id="navbar" class="collapse navbar-collapse" [collapse]="isCollapsed">
+    <div id="navbar" class="collapse navbar-collapse" [collapse]="isCollapsed" (click)="isCollapsed = true">
       <ul class="nav navbar-nav">
         <li [class.active]="router.serializeUrl(router.urlTree) === ''">
           <a [routerLink]="['/']">Home</a>
