@@ -14,9 +14,4 @@ describe('App: TemplateBuilder', () => {
       inject([TemplateBuilderAppComponent], (app: TemplateBuilderAppComponent) => {
     expect(app).toBeTruthy();
   }));
-
-  it('should have as title \'template-builder works!\'',
-      inject([TemplateBuilderAppComponent], (app: TemplateBuilderAppComponent) => {
-    expect(app.title).toEqual('template-builder works!');
-  }));
 });
