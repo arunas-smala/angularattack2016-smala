@@ -15,7 +15,7 @@ import { getTemplate } from '../../shared/templates';
     template: getTemplate(),
     styleUrls: ['template.component.css'],
     directives: [TEMPLATE_DIRECTIVES],
-    encapsulation: ViewEncapsulation.Native
+    encapsulation: ViewEncapsulation.Emulated
 })
 export class TemplateComponent implements OnInit, AfterViewInit {
 
