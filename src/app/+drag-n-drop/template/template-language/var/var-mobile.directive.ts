@@ -20,7 +20,7 @@ export class VarMobileDirective implements OnInit {
   public title:string;
 
   @Input()
-  public value:string = '';
+  public value:boolean = false;
 
   constructor(
       private elementRef:ElementRef,
@@ -63,7 +63,7 @@ export class VarMobileDirective implements OnInit {
 
 
     // Set value to itself to convert to number
-    variableData.value = this.value;
+    variableData.value = false;
 
     currentScope.variables[ this.name ] = variableData;
   }

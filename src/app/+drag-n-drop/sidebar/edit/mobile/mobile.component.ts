@@ -18,6 +18,18 @@ export class EditMobileComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+    this.updateVariableVal();
+
+    var that = this;
+
+    window.onresize = function(event) {
+      that.updateVariableVal();
+    };
   }
 
+  updateVariableVal() {
+    if (window.innerWidth <= 768) {
+      this.variable.value = true;
+    }
+  }
 }
