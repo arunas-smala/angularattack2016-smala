@@ -1,0 +1,9 @@
+<div class="form-group" *ngIf="variable">
+    <label *ngIf="variable.title">{{variable.title}}</label>
+
+    <div class="checkbox" *ngFor="let option of variable.options">
+        <label>
+            <input type="checkbox" name="values[]" [value]="option" [checked]="variable.values.indexOf(option) !== -1" (click)="toggleSelection(option)"> {{option}}
+        </label>
+    </div>
+</div>

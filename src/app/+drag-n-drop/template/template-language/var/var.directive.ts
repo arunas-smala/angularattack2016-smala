@@ -81,13 +81,6 @@ export class VarDirective implements OnInit {
         // Set value to itself to convert to number
         variableData.value = this.value;
 
-        Object.defineProperty(variableData, 'defaultValue', {
-            enumerable: false,
-            writable: true,
-            configurable: false,
-            value: this.value
-        });
-
         currentScope.variables[ this.name ] = variableData;
     }
 

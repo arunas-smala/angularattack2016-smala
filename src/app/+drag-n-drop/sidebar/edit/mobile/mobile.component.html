@@ -1,0 +1,9 @@
+<div class="form-group" *ngIf="variable">
+  <label *ngIf="variable.title">{{variable.title}}</label>
+
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" [disabled]="true" [checked]="variable.value"> Mobile mode triggered?
+    </label>
+  </div>
+</div>

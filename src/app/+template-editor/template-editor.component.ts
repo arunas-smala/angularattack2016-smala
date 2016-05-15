@@ -46,6 +46,8 @@ export class TemplateEditorComponent implements OnInit {
             this.savedTimeout = setTimeout(() => this.confirmReset = false, 5000);
         } else {
             localStorage.removeItem('template');
+            this.confirmReset = false;
+            clearTimeout(this.confirmResetTimeout);
             this.loadTemplate();
         }
     }

@@ -1,0 +1,7 @@
+<div class="form-group" *ngIf="variable">
+  <label *ngIf="variable.title">{{variable.title}}</label>
+
+  <select class="form-control" [(ngModel)]="variable.value">
+    <option *ngFor="let option of variable.options">{{option}}</option>
+  </select>
+</div>

@@ -64,15 +64,28 @@ body {
     }
 
     .sidebar-content {
-        position: static;
-        top: auto;
-        right: auto;
-        bottom: auto;
+        position: absolute;
+        top: 55px;
+        right: 0;
+        bottom: 0;
         left: 0;
         z-index: auto;
-        padding: 15px 0;
     }
 
     .sidebar-header {
     }
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+}
+input[type="color"] {
+    padding: 0;
+    height: 18px;
+}
+input[readonly] {
+    background: #ffffff;
 }
