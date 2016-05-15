@@ -8,7 +8,19 @@ export class DataService {
     private traverseCursor:any = null;
     private data:any = new Scope();
 
+    public selectedBlock:any = {};
+
     constructor() {
+        Object.defineProperty(this.data, 'traverseDone', {
+            enumerable: false,
+            configurable: false,
+            writable: true,
+            value: false
+        });
+    }
+
+    editBlock(variables) {
+        this.selectedBlock.variables = variables;
     }
 
     startTraverse() {
@@ -37,6 +49,7 @@ export class DataService {
     endTraverse() {
         this.traverseCursor = null;
         this.previousCursors = null;
+        this.data.traverseDone = true;
     }
 
     getData() {

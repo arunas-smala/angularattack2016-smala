@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Http, HTTP_PROVIDERS} from '@angular/http';
 import { CodemirrorComponent } from './shared/index'
+import { getTemplate } from '../shared/templates';
 
 @Component({
     moduleId: module.id,
@@ -10,60 +11,48 @@ import { CodemirrorComponent } from './shared/index'
     styleUrls: ['template-editor.component.css'],
     directives: [CodemirrorComponent]
 })
-export class TemplateEditorComponent implements OnInit {
 
+export class TemplateEditorComponent implements OnInit {
     template:string;
+    saved:boolean = false;
+    confirmReset:boolean = false;
 
     constructor(private http:Http) {
     }
 
     ngOnInit() {
-        this._loadTemplate();
+        this.loadTemplate();
     }
 
-    onSubmit() {
-        if (!this.template) {
-            console.log('Empty!'); // TODO change to normal alert
-
-            // let's load not empty template
-            this._loadTemplate();
-
-            return;
-        }
-
+    savedTimeout: any;
+    save() {
         localStorage.setItem('template', this.template);
+        this.saved = true;
 
-        console.log('Saved!'); // TODO change to normal alert
+        if (this.savedTimeout) {
+            clearTimeout(this.savedTimeout);
+        }
+        this.savedTimeout = setTimeout(() => this.saved = false, 1000);
     }
 
-    private _loadTemplate() {
-        this._getStorageTemplate()
-            .then((template) => {
-                if (typeof template === 'string') {
-                    this.template = template;
-                }
-            }).catch(() => {
-            this._getFileTemplate()
-                .subscribe(response => {
-                    this.template = response.text()
-                });
-        })
-    }
+    confirmResetTimeout: any;
+    reset() {
+        if (!this.confirmReset) {
+            this.confirmReset = true;
 
-    private _getStorageTemplate() {
-        return new Promise(
-            function (resolve, reject) {
-                let template = localStorage.getItem('template');
-                if (typeof template === 'string') {
-                    resolve(template);
-                } else {
-                    reject();
-                }
+            if (this.confirmResetTimeout) {
+                clearTimeout(this.confirmResetTimeout);
             }
-        );
+            this.savedTimeout = setTimeout(() => this.confirmReset = false, 5000);
+        } else {
+            localStorage.removeItem('template');
+            this.confirmReset = false;
+            clearTimeout(this.confirmResetTimeout);
+            this.loadTemplate();
+        }
     }
 
-    private _getFileTemplate() {
-        return this.http.get('/default_template.html');
+    private loadTemplate() {
+        this.template = getTemplate();
     }
 }

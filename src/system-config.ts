@@ -31,10 +31,22 @@ const barrels: string[] = [
   'app/shared',
   'app/+template-editor',
   'app/+drag-n-drop',
-  'app/+home',
   'app/+drag-n-drop/template',
   'app/+drag-n-drop/sidebar',
   'app/+template-editor/shared/codemirror',
+  'app/+drag-n-drop/sidebar/edit/input',
+  'app/+drag-n-drop/sidebar/edit/number',
+  'app/+drag-n-drop/sidebar/edit/abstract',
+  'app/+drag-n-drop/sidebar/edit/image',
+  'app/+drag-n-drop/sidebar/edit/select',
+  'app/+drag-n-drop/sidebar/edit/checkbox',
+  'app/+drag-n-drop/sidebar/edit/radio',
+  'app/+drag-n-drop/sidebar/edit/link',
+  'app/+drag-n-drop/sidebar/edit/date',
+  'app/+drag-n-drop/sidebar/edit/mobile',
+  'app/+drag-n-drop/sidebar/edit/textarea',
+  'app/+drag-n-drop/sidebar/edit/color',
+  'app/+drag-n-drop/sidebar/edit/stops',
   /** @cli-barrel */
 ];
 

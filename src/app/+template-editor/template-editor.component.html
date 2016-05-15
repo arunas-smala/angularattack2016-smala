@@ -1,26 +1,23 @@
 <div class="row">
-    <div class="col-xs-12">
-        <h1>Template editor</h1>
-    </div>
-</div>
+    <div class="col-sm-4 col-md-3 sidebar">
+        <div class="sidebar-header">
+            <button class="btn btn-success pull-left" [disabled]="!template" (click)="save()">{{ saved ? 'Saved!' : 'Save' }}</button>
+            <button class="btn pull-left" [class.btn-default]="!confirmReset" [class.btn-danger]="confirmReset" (click)="reset()">{{ confirmReset ? 'Are you sure?' : 'Reset' }}</button>
 
-<form (ngSubmit)="onSubmit()">
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="form-group">
-                <tb-codemirror [(ngModel)]="template" [config]="{
-                        theme: 'solarized light',
-                        lineNumbers: true
+            <button class="btn btn-default visible-xs pull-right" (click)="collapsed = !collapsed" [class.active]="collapsed">
+                <span class="glyphicon glyphicon-th"></span>
+            </button>
+        </div>
+
+        <div class="sidebar-content" [class.hidden-xs]="!collapsed">
+        </div>
+    </div>
+
+    <div class="col-sm-8 col-md-9 template">
+        <tb-codemirror [(ngModel)]="template" [config]="{
+                        lineNumbers: true,
+                        mode: 'htmlmixed'
                     }"></tb-codemirror>
-            </div>
-        </div>
     </div>
 
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="form-group">
-                <button type="submit" class="btn btn-default">Submit</button>
-            </div>
-        </div>
-    </div>
-</form>
+</div>

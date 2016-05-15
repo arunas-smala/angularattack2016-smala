@@ -1,3 +1,88 @@
 body {
-  padding-top: 50px;
+    padding-top: 50px;
+}
+
+.sidebar {
+    background-color: #f5f5f5;
+    padding-top: 55px;
+}
+
+.sidebar-header {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    z-index: 5;
+    background-color: #eee;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    height: 55px;
+}
+
+.sidebar-header button:not(:first-child) {
+    margin-left: 10px;
+}
+
+.sidebar-content {
+    position: fixed;
+    top: 105px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #F5F5F5;
+    z-index: 9;
+    padding: 15px;
+    overflow: auto;
+}
+
+.template {
+    position: fixed;
+    top: 105px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    padding: 0;
+}
+
+@media (min-width: 768px) {
+    .template {
+        top: 50px;
+        right: auto;
+    }
+
+    .sidebar {
+        position: fixed;
+        right: 0;
+        top: 50px;
+        left: auto;
+        bottom: 0;
+        border-left: 1px solid #ccc;
+    }
+
+    .sidebar-content {
+        position: absolute;
+        top: 55px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: auto;
+    }
+
+    .sidebar-header {
+    }
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+}
+input[type="color"] {
+    padding: 0;
+    height: 18px;
+}
+input[readonly] {
+    background: #ffffff;
 }
