@@ -1,5 +1,7 @@
 <block name="first-block" title="First block">
   <div>Some text goes here</div>
+  <var-number name="first-number" value="15" title="Enter number" #tn="var"></var-number>
+  {{tn.value}}
 
   <div>
     <div>
@@ -11,10 +13,14 @@
 
   <block name="inner-block-2" title="Inner block 2">
     <div>Inner block 2</div>
+    <var name="first-variable" title="First variable" value="first value inner" #firstVar="var"></var>
+    And the value is: {{firstVar.value}}
   </block>
 
   <div>
-    <var name="first-variable" title="First variable" value="first value"></var>
+    <var name="first-variable" title="First variable" value="first value" #firstVar2="var"></var>
+    And the value is: {{firstVar2.value}}
+    And the value is from toString: {{firstVar2}}
   </div>
 </block>
 
