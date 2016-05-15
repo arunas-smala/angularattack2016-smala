@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Http, HTTP_PROVIDERS} from '@angular/http';
 import { CodemirrorComponent } from './shared/index'
-import { getTemplate } from './../shared/templates';
+import { getTemplate } from '../shared/templates';
 
 @Component({
     moduleId: module.id,
