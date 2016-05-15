@@ -6,11 +6,12 @@ import {
 } from '@angular/core';
 import { TEMPLATE_DIRECTIVES } from './template-language/index';
 import { DataService } from '../shared/data.service';
+import { getTemplate } from '../../shared/templates';
 
 @Component({
     moduleId: module.id,
     selector: 'tb-template',
-    templateUrl: 'template.component.html',
+    template: getTemplate(),
     styleUrls: ['template.component.css'],
     directives: [TEMPLATE_DIRECTIVES],
     encapsulation: ViewEncapsulation.Native
