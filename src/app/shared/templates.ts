@@ -1,6 +1,6 @@
-export const localTemplate = localStorage.getItem('template');
+export const localTemplate = () => localStorage.getItem('template');
 
-export var fileTemplate = `<!DOCTYPE html>
+export var fileTemplate = () => `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">

@@ -11,8 +11,8 @@ import { localTemplate, fileTemplate } from './../shared/templates';
     styleUrls: ['template-editor.component.css'],
     directives: [CodemirrorComponent]
 })
-export class TemplateEditorComponent implements OnInit {
 
+export class TemplateEditorComponent implements OnInit {
     template:string;
 
     constructor(private http:Http) {
@@ -22,18 +22,18 @@ export class TemplateEditorComponent implements OnInit {
         this.loadTemplate();
     }
 
-    onSubmit() {
-        if (!this.template) {
-            console.log('Empty!'); // TODO change to normal alert
-            return;
-        }
-
+    save() {
+        console.log('save');
         localStorage.setItem('template', this.template);
+    }
 
-        console.log('Saved!'); // TODO change to normal alert
+    reset() {
+        console.log('reset');
+        localStorage.removeItem('template');
+        this.loadTemplate();
     }
 
     private loadTemplate() {
-        this.template = localTemplate || fileTemplate;
+        this.template = localTemplate() || fileTemplate();
     }
 }
