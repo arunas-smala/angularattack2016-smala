@@ -37,6 +37,7 @@ export class DataService {
     endTraverse() {
         this.traverseCursor = null;
         this.previousCursors = null;
+        this.data.traverseDone = true;
     }
 
     getData() {

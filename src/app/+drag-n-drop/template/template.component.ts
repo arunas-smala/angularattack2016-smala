@@ -25,7 +25,9 @@ export class TemplateComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-      this.service.endTraverse();
+      setTimeout(() => {
+        this.service.endTraverse();
+      });
   }
 
 }
