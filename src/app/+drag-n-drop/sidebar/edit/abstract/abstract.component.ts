@@ -40,7 +40,6 @@ export class EditAbstractComponent implements OnInit {
             })
             .then((component:any) => {
                 component.instance.variable = this.variable;
-                console.log(this.variable);
             });
     }
 
