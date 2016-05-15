@@ -1,9 +1,8 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { AlertComponent, CollapseDirective } from 'ng2-bootstrap/ng2-bootstrap';
-import { TemplateEditorComponent } from './+template-editor';
 import { Routes, Router, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router';
 import { DragNDropComponent } from './+drag-n-drop';
-import { HomeComponent } from './+home';
+import { TemplateEditorComponent } from './+template-editor';
 
 @Component({
     moduleId: module.id,
@@ -15,9 +14,8 @@ import { HomeComponent } from './+home';
     providers: [ROUTER_PROVIDERS]
 })
 @Routes([
-    {path: '/', component: HomeComponent},
-    {path: '/template-editor', component: TemplateEditorComponent},
-    {path: '/drag-n-drop', component: DragNDropComponent}
+    {path: '/', component: DragNDropComponent},
+    {path: '/template-editor', component: TemplateEditorComponent}
 ])
 export class TemplateBuilderAppComponent {
     public isCollapsed:boolean = true;
