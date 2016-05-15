@@ -22,6 +22,9 @@ export class VarDirective implements OnInit {
     @Input()
     public value:string = '';
 
+    @Input('max-length')
+    public maxLength:number = 0;
+
     constructor(
         private elementRef:ElementRef,
         private service: DataService
@@ -36,7 +39,10 @@ export class VarDirective implements OnInit {
                 return directive.value;
             },
             set value (val) {
-                // TODO: length
+                if (this.maxLength && val.length > this.maxLength) {
+                    val = val.slice(0, this.maxLength);
+                }
+
                 directive.value = val;
             }
         };
@@ -62,9 +68,27 @@ export class VarDirective implements OnInit {
             }
         });
 
-        currentScope.variables[ this.name ] = variableData;
-        currentScope.variablesArr.push(variableData);
+        if (this.maxLength && Number(this.maxLength) > 0) {
+            this.maxLength = Number(this.maxLength);
+            Object.defineProperty(variableData, 'maxLength', {
+                enumerable: false,
+                writable: true,
+                configurable: false,
+                value: this.maxLength
+            });
+        }
 
+        // Set value to itself to convert to number
+        variableData.value = this.value;
+
+        Object.defineProperty(variableData, 'defaultValue', {
+            enumerable: false,
+            writable: true,
+            configurable: false,
+            value: this.value
+        });
+
+        currentScope.variables[ this.name ] = variableData;
     }
 
     toString() {

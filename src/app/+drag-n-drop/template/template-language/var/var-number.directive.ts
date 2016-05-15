@@ -46,6 +46,7 @@ export class VarNumberDirective implements OnInit {
             },
             set value (val) {
                 val = Number(val);
+
                 if (isNaN(val)) {
                     val = this.defaultValue || 0;
                 }
@@ -131,8 +132,7 @@ export class VarNumberDirective implements OnInit {
         });
 
         currentScope.variables[ this.name ] = variableData;
-        currentScope.variablesArr.push(variableData);
-        }
+    }
 
     toString() {
         return this.value;
