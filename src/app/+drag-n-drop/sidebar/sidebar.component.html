@@ -1,6 +1,6 @@
 <div *ngIf="data && data.traverseDone">
   <div class="sidebar-header">
-    <button class="btn btn-success pull-left" (click)="showDebug = !showDebug">Save</button>
+    <button class="btn btn-success pull-left" (click)="saveData()">Save</button>
     <button class="btn btn-default pull-left" (click)="showDebug = !showDebug; collapsed = true">Debug</button>
 
     <button class="btn btn-default visible-xs pull-right" (click)="collapsed = !collapsed; showDebug = false" [class.active]="collapsed">
@@ -16,9 +16,5 @@
 
   <div class="sidebar-content" [class.hidden-xs]="!collapsed">
     <edit-abstract *ngFor="let variable of data.variables | values" [variable]="variable"></edit-abstract>
-
-    <div *ngIf="selectedBlock.variables">
-      <edit-abstract *ngFor="let variable of selectedBlock.variables | values" [variable]="variable"></edit-abstract>
-    </div>
   </div>
 </div>
