@@ -9,7 +9,16 @@ import {
 import { 
     EditInputComponent,
     EditImageComponent,
-    EditNumberComponent
+    EditNumberComponent,
+    EditCheckboxComponent,
+    EditColorComponent,
+    EditDateComponent,
+    EditLinkComponent,
+    EditMobileComponent,
+    EditRadioComponent,
+    EditSelectComponent,
+    EditStopsComponent,
+    EditTextareaComponent
 } from '../index';
 
 @Component({
@@ -35,6 +44,33 @@ export class EditAbstractComponent implements OnInit {
                 break;
             case 'image':
                 EditComponent = EditImageComponent;
+                break;
+            case 'checkbox':
+                EditComponent = EditCheckboxComponent;
+                break;
+            case 'color':
+                EditComponent = EditColorComponent;
+                break;
+            case 'date':
+                EditComponent = EditDateComponent;
+                break;
+            case 'link':
+                EditComponent = EditLinkComponent;
+                break;
+            case 'mobile':
+                EditComponent = EditMobileComponent;
+                break;
+            case 'radio':
+                EditComponent = EditRadioComponent;
+                break;
+            case 'select':
+                EditComponent = EditSelectComponent;
+                break;
+            case 'stops':
+                EditComponent = EditStopsComponent;
+                break;
+            case 'textarea':
+                EditComponent = EditTextareaComponent;
                 break;
         }
 
