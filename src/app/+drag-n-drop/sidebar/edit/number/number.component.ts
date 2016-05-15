@@ -8,7 +8,7 @@ import {
 
 @Component({
     moduleId: module.id,
-    selector: 'edit-number',
+    selector: 'edit-content',
     templateUrl: 'number.component.html',
     styleUrls: ['number.component.css']
 })

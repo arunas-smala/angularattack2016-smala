@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../shared/data.service';
 import { ValuesPipe } from '../../shared/values.pipe';
 import { 
+    EditAbstractComponent,
     EditInputComponent,
-    EditNumberComponent,
+    EditNumberComponent
 } from './edit/index';
 
 @Component({
@@ -15,6 +16,7 @@ import {
         ValuesPipe
     ],
     directives: [
+        EditAbstractComponent,
         EditInputComponent,
         EditNumberComponent
     ]

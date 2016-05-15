@@ -15,6 +15,6 @@
   </div>
 
   <div class="sidebar-content" [class.hidden-xs]="!collapsed">
-    <edit-input *ngFor="let variable of data.variables | values" [variable]="variable"></edit-input>
+    <edit-abstract *ngFor="let variable of data.variables | values" [variable]="variable"></edit-abstract>
   </div>
 </div>
