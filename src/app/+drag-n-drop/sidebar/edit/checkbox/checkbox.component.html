@@ -6,8 +6,4 @@
             <input type="checkbox" name="values[]" [value]="option" [checked]="variable.values.indexOf(option) !== -1" (click)="toggleSelection(option)"> {{option}}
         </label>
     </div>
-
-    <pre>
-        {{variable.values | json}}
-    </pre>
 </div>
