@@ -20,6 +20,9 @@ export class VarRadioDirective implements OnInit {
   public title:string;
 
   @Input()
+  public options:string;
+
+  @Input()
   public value:string = '';
 
   constructor(
@@ -36,6 +39,12 @@ export class VarRadioDirective implements OnInit {
         return directive.value;
       },
       set value (val) {
+        if (this['options']) {
+          if (this['options'].indexOf(val) === -1) {
+            val = this['options'][0];
+          }
+        }
+        
         directive.value = val;
       }
     };
@@ -61,6 +70,17 @@ export class VarRadioDirective implements OnInit {
       }
     });
 
+    var optionsArray = this.options.split('|');
+    if (!optionsArray.length) {
+      variableData['type'] = 'input';
+    } else {
+      Object.defineProperty(variableData, 'options', {
+        enumerable: false,
+        writable: true,
+        configurable: false,
+        value: optionsArray
+      });
+    }
 
     // Set value to itself to convert to number
     variableData.value = this.value;

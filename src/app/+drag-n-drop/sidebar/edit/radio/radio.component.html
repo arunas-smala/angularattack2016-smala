@@ -1,3 +1,9 @@
-<p>
-  radio works!
-</p>
+<div class="form-group" *ngIf="variable">
+  <label *ngIf="variable.title">{{variable.title}}</label>
+
+  <div class="checkbox" *ngFor="let option of variable.options">
+    <label>
+      <input type="radio" name="value" [value]="option" (click)="variable.value = option" [checked]="option === variable.value"> {{option}}
+    </label>
+  </div>
+</div>
