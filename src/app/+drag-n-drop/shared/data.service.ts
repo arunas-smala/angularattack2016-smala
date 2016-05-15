@@ -9,6 +9,12 @@ export class DataService {
     private data:any = new Scope();
 
     constructor() {
+        Object.defineProperty(this.data, 'traverseDone', {
+            enumerable: false,
+            configurable: false,
+            writable: true,
+            value: false
+        });
     }
 
     startTraverse() {
