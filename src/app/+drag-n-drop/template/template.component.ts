@@ -5,6 +5,7 @@ import {
     AfterViewInit
 } from '@angular/core';
 import { TEMPLATE_DIRECTIVES } from './template-language/index';
+import { BlockComponent } from './template-language/block/block.directive';
 import { DataService } from '../shared/data.service';
 import { getTemplate } from '../../shared/templates';
 
@@ -13,7 +14,7 @@ import { getTemplate } from '../../shared/templates';
     selector: 'tb-template',
     template: getTemplate(),
     styleUrls: ['template.component.css'],
-    directives: [TEMPLATE_DIRECTIVES],
+    directives: [TEMPLATE_DIRECTIVES, BlockComponent],
     encapsulation: ViewEncapsulation.Native
 })
 export class TemplateComponent implements OnInit, AfterViewInit {

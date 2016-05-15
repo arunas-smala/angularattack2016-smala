@@ -1,18 +1,92 @@
 import { 
     ElementRef,
-    Directive, 
+    Component, 
     OnInit, 
     Input,
+    ViewContainerRef,
+    ComponentResolver,
+    ViewChild,
     Output
 } from '@angular/core';
 import { DataService } from '../../../shared/index';
 import { Scope } from '../../../shared/index';
 
-@Directive({
-    selector: 'block,[block]',
+@Component({
+    moduleId: module.id,
+    selector: 'block-template',
+    templateUrl: './block.component.html',
     exportAs: 'block'
 })
 export class BlockDirective implements OnInit {
+
+    @Input()
+    public t:string='aaa';
+
+    @Input()
+    public name:string = 'bybi';
+
+    @Input()
+    public title:string;
+
+    @ViewChild('blockContent', { read: ViewContainerRef })
+    protected contentTarget: ViewContainerRef;
+
+    public variables:any;
+    public blocks:any;
+    public repeaters:any;
+
+
+    constructor(
+        private elementRef:ElementRef,
+        private componentResolver: ComponentResolver,
+        private service: DataService
+    ) {}
+
+    ngOnInit() {
+        var newScope = this.service.getTraverseCursor();
+
+        this.variables = newScope.variables;
+        this.blocks = newScope.blocks;
+        this.repeaters = newScope.repeaters;
+
+    }
+
+    ngAfterViewInit() {
+        var dynamicComponent = this.createContentComponent(this.t || `<div>lll</div>`);
+        this.componentResolver.resolveComponent(dynamicComponent)
+        .then((factory: any) => {
+            return this.contentTarget.createComponent(factory)
+        })
+        .then((component:any) => {
+            component.instance.variables = this.variables;
+        });
+    }
+
+    createContentComponent(template) {
+        @Component({
+            selector: 'block-content',
+            template: template.replace(/\[\[/gm, '{{').replace(/\]\]/gm, '}}')
+        })
+        class BlockContent {
+            @Input()
+            public variables:any;
+        }
+        return BlockContent;
+    }
+
+}
+
+@Component({
+    moduleId: module.id,
+    selector: 'block',
+    directives: [BlockDirective],
+    template: `<block-template [name]="name" [title]="title" [t]="test.innerHTML">
+            <div #test>
+                <ng-content></ng-content>
+            </div>
+        </block-template>`
+})
+export class BlockComponent implements OnInit{
 
     @Input()
     public name:string;
@@ -24,8 +98,10 @@ export class BlockDirective implements OnInit {
     public blocks:any;
     public repeaters:any;
 
+
     constructor(
         private elementRef:ElementRef,
+        private componentResolver: ComponentResolver,
         private service: DataService
     ) {}
 
@@ -87,5 +163,7 @@ export class BlockDirective implements OnInit {
         // Settings current scope to this block. So new inner blocks will
         // belong to this block
         this.service.setTraverseCursor(newScope);
+
     }
 }
+
