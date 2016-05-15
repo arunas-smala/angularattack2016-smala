@@ -20,7 +20,13 @@ export class VarCheckboxDirective implements OnInit {
   public title:string;
 
   @Input()
+  public options:string;
+
+  @Input()
   public value:string = '';
+
+  @Input()
+  public values:any = [];
 
   constructor(
       private elementRef:ElementRef,
@@ -37,6 +43,13 @@ export class VarCheckboxDirective implements OnInit {
       },
       set value (val) {
         directive.value = val;
+      },
+
+      get values () {
+        return directive.values;
+      },
+      set values (vals) {
+        directive.values = vals;
       }
     };
 
@@ -61,6 +74,17 @@ export class VarCheckboxDirective implements OnInit {
       }
     });
 
+    var optionsArray = this.options.split('|');
+    if (!optionsArray.length) {
+      variableData['type'] = 'input';
+    } else {
+      Object.defineProperty(variableData, 'options', {
+        enumerable: false,
+        writable: true,
+        configurable: false,
+        value: optionsArray
+      });
+    }
 
     // Set value to itself to convert to number
     variableData.value = this.value;

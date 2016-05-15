@@ -20,4 +20,14 @@ export class EditCheckboxComponent implements OnInit {
   ngOnInit() {
   }
 
+  toggleSelection(option) {
+    if (this.variable.values.indexOf(option) === -1) {
+      this.variable.values.push(option);
+    } else {
+      let index = this.variable.values.indexOf(option);
+      this.variable.values.splice(index, 1);
+    }
+
+    this.variable.value = this.variable.values.join(', ');
+  }
 }
