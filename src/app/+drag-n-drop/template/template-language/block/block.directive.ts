@@ -14,6 +14,7 @@ import { Scope } from '../../../shared/index';
 @Component({
     moduleId: module.id,
     selector: 'block-template',
+    styleUrls: ['./block.component.css'],
     templateUrl: './block.component.html',
     exportAs: 'block'
 })
@@ -41,6 +42,10 @@ export class BlockDirective implements OnInit {
         private componentResolver: ComponentResolver,
         private service: DataService
     ) {}
+
+    edit() {
+        this.service.editBlock(this.variables);
+    }
 
     ngOnInit() {
         var newScope = this.service.getTraverseCursor();

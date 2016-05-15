@@ -24,9 +24,11 @@ import {
 export class SidebarComponent implements OnInit {
     public showDebug: boolean = false;
     public data: any;
+    public selectedBlock: any;
 
     constructor(private service: DataService) {
         this.data = this.service.getData();
+        this.selectedBlock = this.service.selectedBlock;
     }
 
     ngOnInit() {

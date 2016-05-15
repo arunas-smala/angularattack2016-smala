@@ -16,5 +16,9 @@
 
   <div class="sidebar-content" [class.hidden-xs]="!collapsed">
     <edit-abstract *ngFor="let variable of data.variables | values" [variable]="variable"></edit-abstract>
+
+    <div *ngIf="selectedBlock.variables">
+      <edit-abstract *ngFor="let variable of selectedBlock.variables | values" [variable]="variable"></edit-abstract>
+    </div>
   </div>
 </div>

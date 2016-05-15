@@ -12,9 +12,9 @@ import { getTemplate } from '../../shared/templates';
 @Component({
     moduleId: module.id,
     selector: 'tb-template',
-    template: getTemplate().replace(/\[\[/gm, '{{').replace(/\]\]/gm, '}}'),
+    template: getTemplate(),
     styleUrls: ['template.component.css'],
-    directives: [TEMPLATE_DIRECTIVES, BlockComponent],
+    directives: [TEMPLATE_DIRECTIVES],
     encapsulation: ViewEncapsulation.Native
 })
 export class TemplateComponent implements OnInit, AfterViewInit {
