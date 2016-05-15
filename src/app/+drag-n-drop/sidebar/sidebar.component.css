@@ -1,7 +1,7 @@
 .debug-window {
     background-color: #fff;
-    position: absolute;
-    top: 55px;
+    position: fixed;
+    top: 105px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -14,4 +14,11 @@
     background: transparent;
     border: none;
     font-size: 11px;
+}
+
+@media (min-width: 768px) {
+    .debug-window {
+        position: absolute;
+        top: 55px;
+    }
 }
