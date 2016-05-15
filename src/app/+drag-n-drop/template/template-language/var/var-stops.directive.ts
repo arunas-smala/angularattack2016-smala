@@ -21,7 +21,7 @@ export class VarStopsDirective implements OnInit {
   public title:string;
 
   @Input()
-  public value:string = '';
+  public value:number = 0;
 
   constructor(
       private elementRef:ElementRef,
@@ -65,7 +65,7 @@ export class VarStopsDirective implements OnInit {
 
 
     // Set value to itself to convert to number
-    variableData.value = this.value;
+    variableData.value = 0;
 
     currentScope.variables[ this.name ] = variableData;
   }

@@ -1,3 +1,7 @@
-<p>
-  stops works!
-</p>
+<div class="form-group" *ngIf="variable">
+  <label *ngIf="variable.title">{{variable.title}}</label>
+
+  <div class="checkbox">
+      <input type="text" [readonly]="true" class="form-control" [value]="variable.value">
+  </div>
+</div>
