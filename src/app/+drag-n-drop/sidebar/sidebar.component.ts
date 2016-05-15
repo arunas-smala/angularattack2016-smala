@@ -1,17 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../shared/data.service';
+import { EditInputComponent } from './edit/index';
 
 @Component({
     moduleId: module.id,
     selector: 'tb-sidebar',
     templateUrl: 'sidebar.component.html',
-    styleUrls: ['sidebar.component.css']
+    styleUrls: ['sidebar.component.css'],
+    directives: [EditInputComponent]
 })
 export class SidebarComponent implements OnInit {
     public showDebug: boolean = false;
     public data: any;
 
-    constructor(private service: DataService) {}
+    constructor(private service: DataService) {
+    }
 
     ngOnInit() {
         this.data = this.service.getData();
