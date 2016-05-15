@@ -12,13 +12,10 @@
     <div id="navbar" class="collapse navbar-collapse" [collapse]="isCollapsed" (click)="isCollapsed = true">
       <ul class="nav navbar-nav">
         <li [class.active]="router.serializeUrl(router.urlTree) === ''">
-          <a [routerLink]="['/']">Home</a>
+          <a [routerLink]="['/']">Builder</a>
         </li>
         <li [class.active]="router.serializeUrl(router.urlTree) === '/template-editor'">
           <a  [routerLink]="['/template-editor']">Template</a>
-        </li>
-        <li [class.active]="router.serializeUrl(router.urlTree) === '/drag-n-drop'">
-          <a [routerLink]="['/drag-n-drop']">Drag-n-Drop</a>
         </li>
       </ul>
     </div><!--/.nav-collapse -->

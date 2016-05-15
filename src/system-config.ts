@@ -31,7 +31,6 @@ const barrels: string[] = [
   'app/shared',
   'app/+template-editor',
   'app/+drag-n-drop',
-  'app/+home',
   'app/+drag-n-drop/template',
   'app/+drag-n-drop/sidebar',
   'app/+template-editor/shared/codemirror',
