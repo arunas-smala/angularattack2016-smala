@@ -4,7 +4,6 @@ body {
 
 .sidebar {
   background-color: #f5f5f5;
-  border-bottom: 1px solid #ccc;
   padding-top: 55px;
 }
 
@@ -39,22 +38,29 @@ body {
     padding: 15px;
 }
 
+.template {
+    position: fixed;
+    top: 105px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
 @media (min-width: 768px) {
     .template {
-        position: fixed;
-        right: 0;
         top: 50px;
-        bottom: 0;
         overflow: auto;
+        right: auto;
     }
 
     .sidebar {
         position: fixed;
-        left: 0;
+        right: 0;
         top: 50px;
+        left: auto;
         bottom: 0;
         overflow: auto;
-        border-right: 1px solid #ccc;
+        border-left: 1px solid #ccc;
     }
 
     .sidebar-content {

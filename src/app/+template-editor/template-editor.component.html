@@ -1,11 +1,9 @@
 <div class="row">
     <div class="col-sm-4 col-md-3 sidebar">
         <div class="sidebar-header">
-            <button class="btn btn-default visible-xs pull-left" (click)="collapsed = !collapsed">{{ collapsed ? 'Editor' : 'Docs' }}</button>
-
-            <button class="btn btn-success pull-right" [disabled]="!template" (click)="save()">{{ saved ? 'Saved!' : 'Save' }}</button>
-
-            <button class="btn btn-default pull-right" (click)="reset()">Reset</button>
+            <button class="btn btn-success pull-left" [disabled]="!template" (click)="save()">{{ saved ? 'Saved!' : 'Save' }}</button>
+            <button class="btn btn-default pull-left" (click)="reset()">Reset</button>
+            <button class="btn btn-default visible-xs pull-right" (click)="collapsed = !collapsed">{{ collapsed ? 'Editor' : 'Docs' }}</button>
             <div class="clearfix"></div>
         </div>
 
