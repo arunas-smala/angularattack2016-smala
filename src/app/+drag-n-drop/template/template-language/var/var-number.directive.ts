@@ -40,6 +40,7 @@ export class VarNumberDirective implements OnInit {
 
     ngOnInit() {
         var currentScope = this.service.getTraverseCursor();
+
         var directive = this;
         this.scopeData = {
             get value () {
