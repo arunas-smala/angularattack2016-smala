@@ -15,6 +15,7 @@ import { getTemplate } from '../shared/templates';
 export class TemplateEditorComponent implements OnInit {
     template:string;
     saved:boolean = false;
+    confirmReset:boolean = false;
 
     constructor(private http:Http) {
     }
@@ -24,7 +25,6 @@ export class TemplateEditorComponent implements OnInit {
     }
 
     savedTimeout: any;
-
     save() {
         localStorage.setItem('template', this.template);
         this.saved = true;
@@ -35,9 +35,19 @@ export class TemplateEditorComponent implements OnInit {
         this.savedTimeout = setTimeout(() => this.saved = false, 1000);
     }
 
+    confirmResetTimeout: any;
     reset() {
-        localStorage.removeItem('template');
-        this.loadTemplate();
+        if (!this.confirmReset) {
+            this.confirmReset = true;
+
+            if (this.confirmResetTimeout) {
+                clearTimeout(this.confirmResetTimeout);
+            }
+            this.savedTimeout = setTimeout(() => this.confirmReset = false, 5000);
+        } else {
+            localStorage.removeItem('template');
+            this.loadTemplate();
+        }
     }
 
     private loadTemplate() {

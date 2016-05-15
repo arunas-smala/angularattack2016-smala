@@ -2,7 +2,7 @@
     <div class="col-sm-4 col-md-3 sidebar">
         <div class="sidebar-header">
             <button class="btn btn-success pull-left" [disabled]="!template" (click)="save()">{{ saved ? 'Saved!' : 'Save' }}</button>
-            <button class="btn btn-default pull-left" (click)="reset()">Reset</button>
+            <button class="btn pull-left" [class.btn-default]="!confirmReset" [class.btn-danger]="confirmReset" (click)="reset()">{{ confirmReset ? 'Are you sure?' : 'Reset' }}</button>
 
             <button class="btn btn-default visible-xs pull-right" (click)="collapsed = !collapsed" [class.active]="collapsed">
                 <span class="glyphicon glyphicon-th"></span>
