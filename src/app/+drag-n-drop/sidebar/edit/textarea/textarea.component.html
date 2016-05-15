@@ -1,3 +1,4 @@
-<p>
-  textarea works!
-</p>
+<div class="form-group" *ngIf="variable">
+  <label *ngIf="variable.title">{{variable.title}}</label>
+  <textarea type="text" class="form-control" [attr.maxlength]="variable.maxLength" [placeholder]="variable.placeholder || variable.title || ''" [(ngModel)]="variable.value" rows="5"></textarea>
+</div>
