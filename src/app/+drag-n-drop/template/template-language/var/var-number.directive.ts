@@ -45,8 +45,19 @@ export class VarNumberDirective implements OnInit {
                 return directive.value;
             },
             set value (val) {
-                // TODO: check min max (if set)
                 val = Number(val);
+                if (isNaN(val)) {
+                    val = this.defaultValue || 0;
+                }
+
+                if (this.min !== undefined && val < this.min) {
+                    val = this.min;
+                }
+
+                if (this.max !== undefined && val > this.max) {
+                    val = this.max;
+                }
+
                 directive.value = val;
             }
         };
@@ -72,9 +83,52 @@ export class VarNumberDirective implements OnInit {
             }
         });
 
+        if (this.step !== undefined) {
+            this.step = Number(this.step);
+            Object.defineProperty(variableData, 'step', {
+                enumerable: false,
+                writable: true,
+                configurable: false,
+                value: this.step
+            });
+        }
+
+        if (this.min !== undefined) {
+            this.min = Number(this.min);
+            Object.defineProperty(variableData, 'min', {
+                enumerable: false,
+                writable: true,
+                configurable: false,
+                value: this.min
+            });
+        }
+
+        if (this.max !== undefined) {
+            this.max = Number(this.max);
+            Object.defineProperty(variableData, 'max', {
+                enumerable: false,
+                writable: true,
+                configurable: false,
+                value: this.max
+            });
+        }
+
+        if (this.min !== undefined && this.max !== undefined && this.min > this.max) {
+            delete variableData['min'];
+            delete variableData['max'];
+            this.min = undefined;
+            this.max = undefined;
+        }
 
         // Set value to itself to convert to number
         variableData.value = this.value;
+
+        Object.defineProperty(variableData, 'defaultValue', {
+            enumerable: false,
+            writable: true,
+            configurable: false,
+            value: this.value
+        });
 
         currentScope.variables[ this.name ] = variableData;
         currentScope.variablesArr.push(variableData);

@@ -26,18 +26,30 @@ export class EditNumberComponent implements OnInit, DoCheck {
     ngDoCheck() {
         var changes = this.differ.diff(this.variable);
         if (changes) {
+            this.variable.value = Number(this.variable.value);
+            if (isNaN(this.variable.value)) {
+                this.variable.value = this.variable.defaultValue || 0;
+            }
+
+            if (this.variable.min !== undefined && this.variable.value < this.variable.min) {
+                this.variable.value = this.variable.min;
+            }
+
+            if (this.variable.max !== undefined && this.variable.value > this.variable.max) {
+                this.variable.value = this.variable.max;
+            }
         }
     }
 
     ngOnInit() {
-        this.variable.inc = this.variable.inc || 1;
+        this.variable.step = this.variable.step || 1;
     }
 
     dec() {
-        this.variable.value -= this.variable.inc;
+        this.variable.value -= this.variable.step;
     }
 
     inc() {
-        this.variable.value += this.variable.inc;
+        this.variable.value += this.variable.step;
     }
 }
