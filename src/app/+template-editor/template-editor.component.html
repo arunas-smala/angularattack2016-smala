@@ -3,8 +3,10 @@
         <div class="sidebar-header">
             <button class="btn btn-success pull-left" [disabled]="!template" (click)="save()">{{ saved ? 'Saved!' : 'Save' }}</button>
             <button class="btn btn-default pull-left" (click)="reset()">Reset</button>
-            <button class="btn btn-default visible-xs pull-right" (click)="collapsed = !collapsed">{{ collapsed ? 'Editor' : 'Docs' }}</button>
-            <div class="clearfix"></div>
+
+            <button class="btn btn-default visible-xs pull-right" (click)="collapsed = !collapsed" [class.active]="collapsed">
+                <span class="glyphicon glyphicon-th"></span>
+            </button>
         </div>
 
         <div class="sidebar-content" [class.hidden-xs]="!collapsed">

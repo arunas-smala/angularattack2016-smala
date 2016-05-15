@@ -1,10 +1,10 @@
 body {
-  padding-top: 50px;
+    padding-top: 50px;
 }
 
 .sidebar {
-  background-color: #f5f5f5;
-  padding-top: 55px;
+    background-color: #f5f5f5;
+    padding-top: 55px;
 }
 
 .sidebar-header {
@@ -20,11 +20,11 @@ body {
 }
 
 .sidebar-header button:not(:first-child) {
-  margin-left: 10px;
+    margin-left: 10px;
 }
 
 .padding0 {
-  padding: 0;
+    padding: 0;
 }
 
 .sidebar-content {
@@ -36,6 +36,7 @@ body {
     background: #F5F5F5;
     z-index: 10;
     padding: 15px;
+    overflow: auto;
 }
 
 .template {
@@ -44,12 +45,12 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
+    overflow: auto;
 }
 
 @media (min-width: 768px) {
     .template {
         top: 50px;
-        overflow: auto;
         right: auto;
     }
 
@@ -59,7 +60,6 @@ body {
         top: 50px;
         left: auto;
         bottom: 0;
-        overflow: auto;
         border-left: 1px solid #ccc;
     }
 
