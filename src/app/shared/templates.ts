@@ -1,6 +1,11 @@
-export const localTemplate = () => localStorage.getItem('template');
+export const getTemplate = () => {
+    var localStorageTemplate = localStorage.getItem('template');
 
-export var fileTemplate = () => `<!DOCTYPE html>
+    if (typeof localStorageTemplate === 'string') {
+        return localStorageTemplate;
+    }
+
+    return `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,3 +19,4 @@ export var fileTemplate = () => `<!DOCTYPE html>
 
 </body>
 </html>`;
+};

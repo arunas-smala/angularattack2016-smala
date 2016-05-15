@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Http, HTTP_PROVIDERS} from '@angular/http';
 import { CodemirrorComponent } from './shared/index'
-import { localTemplate, fileTemplate } from './../shared/templates';
+import { getTemplate } from './../shared/templates';
 
 @Component({
     moduleId: module.id,
@@ -23,17 +23,15 @@ export class TemplateEditorComponent implements OnInit {
     }
 
     save() {
-        console.log('save');
         localStorage.setItem('template', this.template);
     }
 
     reset() {
-        console.log('reset');
         localStorage.removeItem('template');
         this.loadTemplate();
     }
 
     private loadTemplate() {
-        this.template = localTemplate() || fileTemplate();
+        this.template = getTemplate();
     }
 }
