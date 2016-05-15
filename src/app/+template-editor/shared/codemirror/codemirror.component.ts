@@ -8,14 +8,18 @@ import {
     ViewChild,
     Optional,
     OptionalMetadata,
+    ViewEncapsulation,
     EventEmitter,
     Renderer
 } from '@angular/core';
 import {NgControl, ControlValueAccessor} from '@angular/common';
 
 @Component({
+  moduleId: module.id,
   selector: 'tb-codemirror',
+  styleUrls: ['./codemirror.component.css'],
   template: `<textarea #host (change)="onValueChange($event)"></textarea>`,
+  encapsulation: ViewEncapsulation.None
 })
 // @Reflect.metadata('parameters', [null, [new OptionalMetadata()]])
 export class CodemirrorComponent {
