@@ -25,10 +25,7 @@ export class EditNumberComponent implements OnInit, DoCheck {
 
     ngDoCheck() {
         var changes = this.differ.diff(this.variable);
-        console.log('looking for changes');
         if (changes) {
-            console.log(changes, 'changes found');
-            debugger;
         }
     }
 
