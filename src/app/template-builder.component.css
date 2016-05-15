@@ -23,10 +23,6 @@ body {
     margin-left: 10px;
 }
 
-.padding0 {
-    padding: 0;
-}
-
 .sidebar-content {
     position: fixed;
     top: 105px;
@@ -46,6 +42,7 @@ body {
     right: 0;
     bottom: 0;
     overflow: auto;
+    padding: 0;
 }
 
 @media (min-width: 768px) {
