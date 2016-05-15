@@ -46,7 +46,7 @@ const barrels: string[] = [
   'app/+drag-n-drop/sidebar/edit/mobile',
   'app/+drag-n-drop/sidebar/edit/textarea',
   'app/+drag-n-drop/sidebar/edit/color',
-  'app/+drag-n-drop/sidebar/edit/input-stops',
+  'app/+drag-n-drop/sidebar/edit/stops',
   /** @cli-barrel */
 ];
 

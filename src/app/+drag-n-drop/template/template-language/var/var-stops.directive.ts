@@ -8,10 +8,11 @@ import {
 import { DataService } from '../../../shared/index';
 
 @Directive({
-  selector: 'var-radio,[var-radio]',
+  selector: 'var-stops,[var-' +
+  'stops]',
   exportAs: 'var'
 })
-export class VarRadioDirective implements OnInit {
+export class VarStopsDirective implements OnInit {
 
   @Input()
   public name:string;
@@ -57,7 +58,8 @@ export class VarRadioDirective implements OnInit {
         enumerable: false,
         writable: true,
         configurable: false,
-        value: 'radio'
+        value: '' +
+        'stops'
       }
     });
 

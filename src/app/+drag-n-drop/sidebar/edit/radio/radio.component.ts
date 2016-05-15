@@ -1,12 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import {
+    Component,
+    OnInit,
+    Input
+} from '@angular/core';
 
 @Component({
   moduleId: module.id,
-  selector: 'app-radio',
+  selector: 'edit-radio',
   templateUrl: 'radio.component.html',
   styleUrls: ['radio.component.css']
 })
 export class RadioComponent implements OnInit {
+
+  @Input()
+  variable: any;
 
   constructor() {}
 

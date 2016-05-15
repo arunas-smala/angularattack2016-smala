@@ -13,11 +13,7 @@ import {
 export class EditInputComponent implements OnInit {
 
     @Input()
-    variable: any = {
-        value: '1',
-        name: '2',
-        title: '3'
-    };
+    variable: any;
 
     constructor() {}
 

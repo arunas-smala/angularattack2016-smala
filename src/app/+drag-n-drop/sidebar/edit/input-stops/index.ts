@@ -1,1 +1,1 @@
-export { InputStopsComponent } from './input-stops.component';
+export { StopsComponent } from './stops.component';

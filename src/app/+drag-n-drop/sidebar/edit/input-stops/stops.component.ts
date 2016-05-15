@@ -6,11 +6,11 @@ import {
 
 @Component({
   moduleId: module.id,
-  selector: 'edit-mobile',
-  templateUrl: 'mobile.component.html',
-  styleUrls: ['mobile.component.css']
+  selector: 'edit-stops',
+  templateUrl: 'stops.component.html',
+  styleUrls: ['stops.component.css']
 })
-export class MobileComponent implements OnInit {
+export class StopsComponent implements OnInit {
 
   @Input()
   variable: any;

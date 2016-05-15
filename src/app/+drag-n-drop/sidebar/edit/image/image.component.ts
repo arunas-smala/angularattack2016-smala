@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {
+    Component,
+    OnInit,
+    Input
+} from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -8,6 +12,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditImageComponent implements OnInit {
 
+  @Input()
+  variable: any;
+  
   constructor() {}
 
   ngOnInit() {
