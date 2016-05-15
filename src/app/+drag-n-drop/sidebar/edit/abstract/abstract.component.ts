@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { 
     EditInputComponent,
+    EditImageComponent,
     EditNumberComponent
 } from '../index';
 
@@ -31,7 +32,10 @@ export class EditAbstractComponent implements OnInit {
         switch (this.variable.type) {
             case 'number':
                 EditComponent = EditNumberComponent;
-                break
+                break;
+            case 'image':
+                EditComponent = EditImageComponent;
+                break;
         }
 
         this.componentResolver.resolveComponent(EditComponent)

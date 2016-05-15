@@ -1,3 +1,14 @@
-<p>
-  image works!
-</p>
+<div class="form-group" *ngIf="variable">
+    <label *ngIf="variable.title">{{variable.title}}</label>
+
+    <div class="input-group row1">
+        <div class="input-group-addon">URL</div>
+        <input type="text" placeholder="http://" class="form-control" [(ngModel)]="variable.value">
+    </div>
+
+    <div class="input-group row2">
+        <div class="input-group-addon">ALT</div>
+        <input type="text" class="form-control" placeholder="Alternative text" [(ngModel)]="variable.alt">
+    </div>
+</div>
+
