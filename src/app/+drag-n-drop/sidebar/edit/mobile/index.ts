@@ -1,1 +1,1 @@
-export { MobileComponent } from './mobile.component';
+export { EditMobileComponent } from './mobile.component';

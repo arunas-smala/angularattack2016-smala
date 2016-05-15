@@ -10,7 +10,7 @@ import {
   templateUrl: 'date.component.html',
   styleUrls: ['date.component.css']
 })
-export class DateComponent implements OnInit {
+export class EditDateComponent implements OnInit {
 
   @Input()
   variable: any;

@@ -1,1 +1,1 @@
-export { RadioComponent } from './radio.component';
+export { EditRadioComponent } from './radio.component';

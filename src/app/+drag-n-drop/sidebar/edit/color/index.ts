@@ -1,1 +1,1 @@
-export { ColorComponent } from './color.component';
+export { EditColorComponent } from './color.component';

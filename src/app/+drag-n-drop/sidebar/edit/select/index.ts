@@ -1,1 +1,1 @@
-export { SelectComponent } from './select.component';
+export { EditSelectComponent } from './select.component';

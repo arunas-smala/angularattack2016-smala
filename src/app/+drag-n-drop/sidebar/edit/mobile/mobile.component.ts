@@ -10,7 +10,7 @@ import {
   templateUrl: 'mobile.component.html',
   styleUrls: ['mobile.component.css']
 })
-export class MobileComponent implements OnInit {
+export class EditMobileComponent implements OnInit {
 
   @Input()
   variable: any;

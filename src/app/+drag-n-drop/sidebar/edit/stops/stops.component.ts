@@ -10,7 +10,7 @@ import {
   templateUrl: 'stops.component.html',
   styleUrls: ['stops.component.css']
 })
-export class StopsComponent implements OnInit {
+export class EditStopsComponent implements OnInit {
 
   @Input()
   variable: any;

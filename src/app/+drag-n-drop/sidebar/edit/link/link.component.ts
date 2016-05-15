@@ -10,7 +10,7 @@ import {
   templateUrl: 'link.component.html',
   styleUrls: ['link.component.css']
 })
-export class LinkComponent implements OnInit {
+export class EditLinkComponent implements OnInit {
 
   @Input()
   variable: any;

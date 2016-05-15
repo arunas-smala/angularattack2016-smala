@@ -10,7 +10,7 @@ import {
   templateUrl: 'radio.component.html',
   styleUrls: ['radio.component.css']
 })
-export class RadioComponent implements OnInit {
+export class EditRadioComponent implements OnInit {
 
   @Input()
   variable: any;

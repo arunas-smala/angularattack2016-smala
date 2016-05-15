@@ -10,7 +10,7 @@ import {
   templateUrl: 'textarea.component.html',
   styleUrls: ['textarea.component.css']
 })
-export class TextareaComponent implements OnInit {
+export class EditTextareaComponent implements OnInit {
 
   @Input()
   variable: any;

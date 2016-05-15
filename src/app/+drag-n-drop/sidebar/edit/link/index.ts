@@ -1,1 +1,1 @@
-export { LinkComponent } from './link.component';
+export { EditLinkComponent } from './link.component';

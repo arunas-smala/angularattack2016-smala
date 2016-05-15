@@ -10,7 +10,7 @@ import {
   templateUrl: 'select.component.html',
   styleUrls: ['select.component.css']
 })
-export class SelectComponent implements OnInit {
+export class EditSelectComponent implements OnInit {
 
   @Input()
   variable: any;
