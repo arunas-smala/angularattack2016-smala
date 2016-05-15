@@ -4,15 +4,11 @@
   <div class="clearfix"></div>
 </div>
 
-<div>
+<div class="sidebar-content">
   <form>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <div class="form-group" *ngFor="let variable of data.variablesArr">
+      <label>{{variable.title}}</label>
+      <input type="text" class="form-control" [placeholder]="variable.placeholder || variable.title" [(ngModel)]="variable.value">
     </div>
   </form>
 </div>
