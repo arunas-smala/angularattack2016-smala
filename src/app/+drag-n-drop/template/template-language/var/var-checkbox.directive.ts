@@ -88,6 +88,7 @@ export class VarCheckboxDirective implements OnInit {
 
     // Set value to itself to convert to number
     variableData.value = this.value;
+    variableData.values = this.value.split(', ');
 
     currentScope.variables[ this.name ] = variableData;
   }
