@@ -16,7 +16,6 @@ module.exports = function(defaults) {
       'ng2-bootstrap/**/*.js',
       'codemirror/lib/codemirror.js',
       'codemirror/lib/codemirror.css',
-      'codemirror/theme/ambiance.css',
       'codemirror/mode/htmlmixed/htmlmixed.js',
       'codemirror/mode/xml/xml.js',
       'codemirror/mode/javascript/javascript.js',
