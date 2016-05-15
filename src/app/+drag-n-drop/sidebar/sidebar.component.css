@@ -1,13 +1,23 @@
 .sidebar-header {
-    height: 50px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    height: 55px;
     border-bottom: 1px solid #eee;
     z-index: 5;
+    padding: 10px;
+    background-color: #eee;
+}
+
+.sidebar-header button {
+    margin-left: 10px;
 }
 
 .debug-window {
     background-color: #f5f5f5;
     position: absolute;
-    top: 50px;
+    top: 55px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -18,4 +28,5 @@
     margin: 0;
     background: transparent;
     border: none;
+    font-size: 11px;
 }

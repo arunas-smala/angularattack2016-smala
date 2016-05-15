@@ -1,9 +1,10 @@
 <div class="sidebar-header">
-  <button class="btn btn-warning debug" (click)="showDebug = !showDebug">Debug</button>
+  <button class="btn btn-success pull-right" (click)="showDebug = !showDebug">Save</button>
+  <button class="btn btn-default pull-right" (click)="showDebug = !showDebug">Debug</button>
 </div>
 
 <div class="debug-window" *ngIf="showDebug">
   <pre>
-    {{ data | json }}
+{{ data | json }}
   </pre>
 </div>
