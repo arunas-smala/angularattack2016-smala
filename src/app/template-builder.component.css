@@ -1,3 +1,48 @@
 body {
   padding-top: 50px;
 }
+
+.sidebar {
+  display: block;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #eee;
+}
+
+@media (min-width: 768px) {
+  .template {
+    position: fixed;
+    right: 0;
+    top: 50px;
+    bottom: 0;
+    overflow: auto;
+  }
+
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 50px;
+    bottom: 0;
+    overflow: auto;
+    border-right: 1px solid #eee;
+  }
+}
+
+.sidebar-header {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  height: 55px;
+  border-bottom: 1px solid #eee;
+  z-index: 5;
+  padding: 10px;
+  background-color: #eee;
+}
+
+.sidebar-header button {
+  margin-left: 10px;
+}
+
+.padding0 {
+  padding: 0;
+}
