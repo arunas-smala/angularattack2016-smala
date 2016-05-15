@@ -4,5 +4,4 @@ export function Scope() {
     this.variables = {};
     this.blocks = {};
     this.repeaters = {};
-    this.variablesArr = [];
 }
