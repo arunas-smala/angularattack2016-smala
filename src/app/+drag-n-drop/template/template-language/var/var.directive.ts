@@ -29,9 +29,42 @@ export class VarDirective implements OnInit {
 
     ngOnInit() {
         var currentScope = this.service.getTraverseCursor();
-        currentScope.variables[ this.name ] = {
-            value: this.value
+
+        var directive = this;
+        var variableData = {
+            get value () {
+                return directive.value;
+            },
+            set value (val) {
+                // TODO: length
+                directive.value = val;
+            }
         };
+
+        Object.defineProperties(variableData, {
+            title: {
+                enumerable: false,
+                writable: true,
+                configurable: false,
+                value: directive.title
+            },
+            name: {
+                enumerable: false,
+                writable: true,
+                configurable: false,
+                value: directive.name
+            },
+            type: {
+                enumerable: false,
+                writable: true,
+                configurable: false,
+                value: 'input'
+            }
+        });
+
+        currentScope.variables[ this.name ] = variableData;
+        currentScope.variablesArr.push(variableData);
+
     }
 
     toString() {
