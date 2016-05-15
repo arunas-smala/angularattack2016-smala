@@ -36,6 +36,10 @@ export class VarColorDirective implements OnInit {
         return directive.value;
       },
       set value (val) {
+        if (!/^#([a-f0-9]{3}|[a-f0-9]{6})$/i.test(val)) {
+          val = '#000000';
+        }
+        
         directive.value = val;
       }
     };

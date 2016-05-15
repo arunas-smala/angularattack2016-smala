@@ -1,3 +1,10 @@
-<p>
-  color works!
-</p>
+<div class="form-group" *ngIf="variable">
+  <label *ngIf="variable.title">{{variable.title}}</label>
+
+  <div class="input-group">
+    <input type="text" class="form-control" [(ngModel)]="variable.value" [readonly]="true">
+    <div class="input-group-addon">
+      <input type="color" [(ngModel)]="variable.value">
+    </div>
+  </div>
+</div>
