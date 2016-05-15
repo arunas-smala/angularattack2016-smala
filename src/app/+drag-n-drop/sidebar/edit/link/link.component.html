@@ -1,3 +1,14 @@
-<p>
-  link works!
-</p>
+<div class="form-group" *ngIf="variable">
+  <label *ngIf="variable.title">{{variable.title}}</label>
+
+  <div class="input-group row1">
+    <div class="input-group-addon">HREF</div>
+    <input type="text" placeholder="http://" class="form-control" [(ngModel)]="variable.value">
+  </div>
+
+  <div class="input-group row2">
+    <div class="input-group-addon">TEXT</div>
+    <input type="text" class="form-control" placeholder="Link text" [(ngModel)]="variable.text">
+  </div>
+</div>
+

@@ -22,6 +22,9 @@ export class VarLinkDirective implements OnInit {
   @Input()
   public value:string = '';
 
+  @Input()
+  public text:string = '';
+
   constructor(
       private elementRef:ElementRef,
       private service: DataService
@@ -37,6 +40,12 @@ export class VarLinkDirective implements OnInit {
       },
       set value (val) {
         directive.value = val;
+      },
+      get text () {
+        return directive.text;
+      },
+      set text (val) {
+        directive.text = val;
       }
     };
 
@@ -64,6 +73,7 @@ export class VarLinkDirective implements OnInit {
 
     // Set value to itself to convert to number
     variableData.value = this.value;
+    variableData.text = this.text;
 
     currentScope.variables[ this.name ] = variableData;
   }
