@@ -64,13 +64,12 @@ body {
     }
 
     .sidebar-content {
-        position: static;
-        top: auto;
-        right: auto;
-        bottom: auto;
+        position: absolute;
+        top: 55px;
+        right: 0;
+        bottom: 0;
         left: 0;
         z-index: auto;
-        padding: 15px 0;
     }
 
     .sidebar-header {
