@@ -22,15 +22,12 @@ import {
 export class SidebarComponent implements OnInit {
     public showDebug: boolean = false;
     public data: any;
-    public variableNames: string[];
 
     constructor(private service: DataService) {
         this.data = this.service.getData();
     }
 
     ngOnInit() {
-        this.variableNames = Object.keys(this.data.variables);
-        console.log(this.variableNames);
     }
 
 }
