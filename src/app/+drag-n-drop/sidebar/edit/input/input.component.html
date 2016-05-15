@@ -1,4 +1,4 @@
 <div class="form-group" *ngIf="variable">
   <label *ngIf="variable.title">{{variable.title}}</label>
-  <input type="text" class="form-control" [placeholder]="variable.placeholder || variable.title || ''" [(ngModel)]="variable.value">
+  <input type="text" class="form-control" [attr.maxlength]="variable.maxLength" [placeholder]="variable.placeholder || variable.title || ''" [(ngModel)]="variable.value">
 </div>
