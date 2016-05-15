@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+export const localTemplate = localStorage.getItem('template');
+
+export var fileTemplate = `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,4 +13,4 @@
 <p>Do something with it!</p>
 
 </body>
-</html>
+</html>`;
