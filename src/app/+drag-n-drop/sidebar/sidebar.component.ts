@@ -1,13 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../shared/data.service';
-import { EditInputComponent } from './edit/index';
+import { 
+    EditInputComponent,
+    EditNumberComponent,
+} from './edit/index';
 
 @Component({
     moduleId: module.id,
     selector: 'tb-sidebar',
     templateUrl: 'sidebar.component.html',
     styleUrls: ['sidebar.component.css'],
-    directives: [EditInputComponent]
+    directives: [
+        EditInputComponent,
+        EditNumberComponent
+    ]
 })
 export class SidebarComponent implements OnInit {
     public showDebug: boolean = false;

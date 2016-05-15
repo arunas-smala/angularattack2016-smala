@@ -1,0 +1,16 @@
+<div class="form-group" *ngIf="variable">
+  <label *ngIf="variable.title">{{variable.title}}</label>
+
+  <div class="input-group">
+    <input type="text" class="form-control" [placeholder]="variable.placeholder || variable.title || ''" [(ngModel)]="variable.value">
+
+    <span class="input-group-btn">
+      <button class="btn btn-default" (click)="dec()">
+        <span class="glyphicon glyphicon-minus"></span>
+      </button>
+      <button class="btn btn-default" (click)="inc()">
+        <span class="glyphicon glyphicon-plus"></span>
+      </button>
+    </span>
+  </div>
+</div>

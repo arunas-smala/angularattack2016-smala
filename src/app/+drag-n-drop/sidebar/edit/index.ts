@@ -1,1 +1,2 @@
-export { EditInputComponent } from './input/input.component';
+export { EditInputComponent } from './input/index';
+export { EditNumberComponent } from './number/index';

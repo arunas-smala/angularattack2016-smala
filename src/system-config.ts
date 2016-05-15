@@ -35,6 +35,7 @@ const barrels: string[] = [
   'app/+drag-n-drop/sidebar',
   'app/+template-editor/shared/codemirror',
   'app/+drag-n-drop/sidebar/edit/input',
+  'app/+drag-n-drop/sidebar/edit/number',
   /** @cli-barrel */
 ];
 

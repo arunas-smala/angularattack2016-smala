@@ -5,7 +5,7 @@
 </div>
 
 <div class="sidebar-content">
-  <edit-input *ngFor="let variable of data.variablesArr" [variable]="variable"></edit-input>
+  <edit-number *ngFor="let variable of data.variablesArr" [variable]="variable"></edit-number>
 </div>
 
 <div class="debug-window" *ngIf="showDebug">

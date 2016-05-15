@@ -45,10 +45,8 @@ export class VarNumberDirective implements OnInit {
                 return directive.value;
             },
             set value (val) {
+                // TODO: check min max (if set)
                 val = Number(val);
-                if (val > 40) { 
-                    val = 40;
-                }
                 directive.value = val;
             }
         };
@@ -74,9 +72,9 @@ export class VarNumberDirective implements OnInit {
             }
         });
 
-        //        variableData.meta.title = this.title;
-        //        variableData.meta.name = this.name;
-        //        variableData.meta.type = 'number';
+
+        // Set value to itself to convert to number
+        variableData.value = this.value;
 
         currentScope.variables[ this.name ] = variableData;
         currentScope.variablesArr.push(variableData);
