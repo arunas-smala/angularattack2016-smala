@@ -1,14 +1,16 @@
 <div class="row">
     <div class="col-sm-4 col-md-3 sidebar">
         <div class="sidebar-header">
+            <button class="btn btn-default visible-xs pull-left" (click)="collapsed = !collapsed">{{ collapsed ? 'Docs' : 'Editor' }}</button>
+
             <button class="btn btn-success pull-right" [disabled]="!template" (click)="save()">{{ saved ? 'Saved!' : 'Save' }}</button>
 
             <button class="btn btn-default pull-right" (click)="reset()">Reset</button>
             <div class="clearfix"></div>
         </div>
 
-        <div>
-            INFO
+        <div class="sidebar-content" [class.hidden-xs]="collapsed">
+            INFO somesadf fads sda dfsads afasd fasdf asdf sadfadfs ads fadsf adsf adsf sadf dsfdas
         </div>
     </div>
 

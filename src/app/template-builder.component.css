@@ -3,10 +3,9 @@ body {
 }
 
 .sidebar {
-  display: block;
   background-color: #f5f5f5;
   border-bottom: 1px solid #ccc;
-  padding-top: 65px;
+  padding-top: 55px;
 }
 
 .sidebar-header {
@@ -21,12 +20,23 @@ body {
     height: 55px;
 }
 
-.sidebar-header button {
+.sidebar-header button:not(:first-child) {
   margin-left: 10px;
 }
 
 .padding0 {
   padding: 0;
+}
+
+.sidebar-content {
+    position: fixed;
+    top: 105px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #F5F5F5;
+    z-index: 10;
+    padding: 15px;
 }
 
 @media (min-width: 768px) {
@@ -45,6 +55,16 @@ body {
         bottom: 0;
         overflow: auto;
         border-right: 1px solid #ccc;
+    }
+
+    .sidebar-content {
+        position: static;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: 0;
+        z-index: auto;
+        padding: 15px 0;
     }
 
     .sidebar-header {
