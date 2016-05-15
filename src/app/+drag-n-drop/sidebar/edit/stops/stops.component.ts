@@ -18,10 +18,6 @@ export class EditStopsComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    var that = this;
-    document.onkeypress = function () {
-      that.variable.value += 1;
-    };
   }
 
 }
